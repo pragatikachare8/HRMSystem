@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="HRMSAdminModule.Admin" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header, .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .nav-header {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            float: left;
+            height: 100vh;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .content {
+            margin-left: 210px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu li {
+            margin: 10px 0;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .menu a:hover {
+            background-color: #ddd;
+        }
+        .menu .nav-label {
+            font-weight: bold;
+            margin-top: 15px;
+            color: #666;
+        }
+        .menu .has-arrow {
+            cursor: pointer;
+        }
+        .menu ul ul {
+            display: none;
+            margin-left: 15px;
+        }
+        .menu .has-arrow:hover + ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HRMS Dashboard</h1>
+    </div>
+
+    <div class="nav-header">
+        <p>Logo Here</p>
+    </div>
+
+    <div class="sidebar">
+        <div class="menu">
+            <ul>
+                <li class="nav-label">Dashboard</li>
+                <li><a href="./AdminDashboard.aspx">Dashboard</a></li>
+
+                <li class="nav-label">Employee Management</li>
+                <li>
+                    <a class="has-arrow">Employee Actions</a>
+                    <ul>
+                        <li><a href="./createEmployees.aspx">Create Employee</a></li>
+                        <li><a href="./ManageEmployees.aspx">Manage Employee</a></li>
+                        <li><a href="./ManageEmployees.aspx">Upload Documents</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-label">Leave Management</li>
+                <li>
+                    <a class="has-arrow">Leave Actions</a>
+                    <ul>
+                        <li><a href="./AttendanceManagement.aspx">Attendance Management</a></li>
+                        <li><a href="./ApproveRejectLeaves.aspx">Approve/Reject Leaves</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-label">Payroll Management</li>
+                <li>
+                    <a class="has-arrow">Payroll Actions</a>
+                    <ul>
+                        <li><a href="./GeneratePayslips.aspx">Generate Payslips</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; Designed & Developed by YourCompany</p>
+    </div>
+</body>
+
+</html>
